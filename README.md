@@ -1,10 +1,12 @@
 # Vaccine Availability Tracker
-This is aws java lambda function which checks the covid vaccine availability based on PIN for india.
+This is AWS Java Lambda function which checks the covid vaccine availability based on PIN for india. This function fetches the data from the api exposed by Government of India.
+Details of API can found here : https://apisetu.gov.in/public/api/cowin/cowin-public-v2#/Appointment%20Availability%20APIs/findByPin 
 
-Build :  run mvn clean install.
-Upload fat jar created after build in aws lamda function.
-minimum java 8 runtime required.
-PIN can be changed in the code for which vaccine availability is tracked for.
+Build & Runtime : 
+1. Run "mvn clean install" to build. 
+2. Upload fat jar created after build in aws lamda function.
+3. Minimum java 8 runtime required.
+4. PIN can be changed in the Lambda input for which vaccine availability is tracked for.
 
 Use Case : You can use this to get regular email/sms about the availability of vaccine for the PIN number you want. This will save you time you require to manully login to cowin              site and look for vaccine availability plus you will not miss to book slot.  
 
