@@ -16,6 +16,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -39,7 +40,8 @@ public class VaccineTrackerHandler implements RequestHandler<Map<String, String>
         LocalDate date = LocalDate.now().plusDays(1);
         DateTimeFormatter formatters = DateTimeFormatter.ofPattern("d-MM-uuuu");
         String nextDay = date.format(formatters);
-        String pin = "848114";
+        String pin = event.get("PIN");
+        System.out.println("Entered PIN : "+ pin);
         FinalResponse finalResponse = new FinalResponse();
         finalResponse.setDate(nextDay);
         finalResponse.setIsAvailable("NOT AVAILABLE");
@@ -126,6 +128,8 @@ public class VaccineTrackerHandler implements RequestHandler<Map<String, String>
 
 //    public static void main(String[] args) {
 //        VaccineTrackerHandler handler = new VaccineTrackerHandler();
-//        handler.handleRequest(null,null);
+//        LinkedHashMap<String,String> input =  new LinkedHashMap<>();
+//        input.put("PIN", "827013");
+//        handler.handleRequest(input,null);
 //    }
 }
